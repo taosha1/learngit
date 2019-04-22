@@ -10,6 +10,9 @@
 9. git checkout -- filename 撤销工作区的修改 回到最近一次的add或commit时的状态，已经添加到暂存区，再修改，撤销后回到暂存区的状态。在工作区修改了，但未放到暂存区，撤销后回到上次commit时版本库的状态.
 10. 修改只是添加到暂存区，还未commit，使用 git reset HEAD <file>  将暂存区的修改撤销掉。在使用 git checkout -- filename 清除工作区的修改. 如果已经commit，则需要回退到以前的版本，才能撤销修改。
 11. 使用rm删除工作区文件后，如果不想保留本地版本仓库的该文件 使用git rm filename&& git commit. 如果误删想要恢复,使用git checkout -- filename. git checkout 作用是用版本库里的版本替换工作区的版本。即无论修改还是删除，都能还原。
-12. 创建切换分支 git checkout -b 分支名
+12. 创建切换分支 git checkout -b 分支名。 禁用 fast forward模式 git merge --no-ff -m "msg" 分支名
+13. bug分支 使用 git stash储存当前工作现场 git stash list查看。恢复：git stash pop，git stash apply（恢复后stash内容不删除）需要 git stash drop
+14. 删除分支 git branch -d 分支名
+15. git push origin 分支名 推送分支。多人协作：git checkout -b dev origin/dev 创建远程的origin的dev分支到本地。 多人同时推送冲突： git pull 把最新的提交抓下来， 在本地合并。失败原因：没有指定本地dev分支与远程origin/dev分支的链接. git branch --set-upstream-to dev origin/dev
 
 
