@@ -1,4 +1,4 @@
-# demo1
+# 常用命令
 1. git config --global user.name "%name%"
 2. git config --global user.email "%email%"
 3. a new repository -> git init 
@@ -14,5 +14,6 @@
 13. bug分支 使用 git stash储存当前工作现场 git stash list查看。恢复：git stash pop，git stash apply（恢复后stash内容不删除）需要 git stash drop
 14. 删除分支 git branch -d 分支名
 15. git push origin 分支名 推送分支。多人协作：git checkout -b dev origin/dev 创建远程的origin的dev分支到本地。 多人同时推送冲突： git pull 把最新的提交抓下来， 在本地合并。失败原因：没有指定本地dev分支与远程origin/dev分支的链接. git branch --set-upstream-to dev origin/dev
+16. 打标签 git tag v1.0 默认打在最新的commit上。 打历史标签 git tag Vx.x commit id 查看标签 git show tagname  git push origin --tags 推送所有本地标签
 
 
