@@ -16,6 +16,11 @@
 15. git push origin 分支名 推送分支。多人协作：git checkout -b dev origin/dev 创建远程的origin的dev分支到本地。 多人同时推送冲突： git pull 把最新的提交抓下来， 在本地合并。失败原因：没有指定本地dev分支与远程origin/dev分支的链接. git branch --set-upstream-to dev origin/dev
 16. 打标签 git tag v1.0 默认打在最新的commit上。 打历史标签 git tag Vx.x commit id 查看标签 git show tagname  git push origin --tags 推送所有本地标签
 17. 添加远程库git remote add origin git@github.com:taosha1/learngit.git 推送git push -u origin master  第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来
+18. .gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：
+--cached 后面 有个点
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
 
 
 
